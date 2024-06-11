@@ -23,6 +23,6 @@ class AppWebLayout extends Component
      */
     public function render()
     {
-        return view('components.app-web-layout');
+        return view('layouts.app-web-layout');
     }
 }
