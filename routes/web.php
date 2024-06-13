@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('groups', [App\Http\Controllers\GroupController::class, 'index']);
 Route::get('groups/create', [App\Http\Controllers\GroupController::class, 'create']);
 Route::post('groups/create', [App\Http\Controllers\GroupController::class, 'store']);
+Route::get('groups/{id}/group', [App\Http\Controllers\GroupController::class, 'group']);
 Route::get('groups/{id}/edit', [App\Http\Controllers\GroupController::class, 'edit']);
 Route::put('groups/{id}/edit', [App\Http\Controllers\GroupController::class, 'update']);
 Route::get('groups/{id}/delete', [App\Http\Controllers\GroupController::class, 'destroy']);

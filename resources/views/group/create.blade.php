@@ -11,7 +11,7 @@
                 @endif
                 <div class="card">
                     <div class="card-header">
-                        <h4>Add Groups</h4>
+                        <h4>Add Contact</h4>
                         <a href="{{ url('groups')}}" class="btn btn-primary btn-sm">Back</a>
                     </div>
                     <div class="card-body">
@@ -36,7 +36,7 @@
                                 @error('is_active') <span class="text-danger">{{ $message }}</span>@enderror
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-success">Save</button>
                             </div>
                         </form>
                     </div>

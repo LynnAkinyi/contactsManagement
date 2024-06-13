@@ -11,7 +11,7 @@
                 @endif
                 <div class="card">
                     <div class="card-header">
-                        <h4>Edit Groups</h4>
+                        <h4>Edit Contact</h4>
                         <a href="{{ url('groups')}}" class="btn btn-primary btn-sm">Back</a>
                     </div>
                     <div class="card-body">

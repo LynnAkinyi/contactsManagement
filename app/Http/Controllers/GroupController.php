@@ -33,6 +33,13 @@ class GroupController extends Controller
         return redirect('groups/create')->with('status', 'Group Created');
     }
 
+    public function group(int $id)
+    {
+        $group = Group::findOrFail($id);
+        return view('group.group', compact('group'));
+
+    }
+
     public function edit(int $id)
     {
         $group = Group::findOrFail($id);
