@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('groups', [App\Http\Controllers\GroupController::class, 'index']);
+Route::get('groups/create', [App\Http\Controllers\GroupController::class, 'create']);
+
+
 Route::get('/', function () {
     return view('frontend.index');
 });
