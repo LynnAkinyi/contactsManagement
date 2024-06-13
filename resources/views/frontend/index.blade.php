@@ -5,16 +5,17 @@
         </x-slot>
         <div class="py-5">
             <div class="container">
-                <h2>This is the first step</h2>
-                <h2>This is the first step</h2>
-                <p>Moving on easy</p>
+                <h2>This is a contacts management app</h2>
+                <div class="mb-3">
+                    <a href="{{url('groups') }}" class="btn btn-primary btn-sm">View Contacts</a>
+                </div>
             </div>
         </div>
 
         <x-slot:scripts>
             <script>
                 console.log('This is the script');
-                alert('Do you want to add a contact');
+
             </script>
             </x-slot>
 </x-app-web-layout>
