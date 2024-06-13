@@ -11,6 +11,8 @@
 
 <body>
 
+    <x-partials.navbar></x-partials.navbar>
+
     <div>
 
         {{ $slot }}
@@ -20,7 +22,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    {{ $scripts }}
+    {{ $scripts ?? ''}}
 
 </body>
 
