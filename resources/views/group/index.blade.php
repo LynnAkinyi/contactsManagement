@@ -41,7 +41,9 @@
                                         <td>
                                             <a href="{{url('groups/' . $item->id . '/edit') }}"
                                                 class="btn btn-primary btn-sm">Edit</a>
-                                            <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                            <a href="{{url('groups/' . $item->id . '/delete') }}"
+                                                class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Are you sure')">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
