@@ -1,7 +1,7 @@
 <x-app-web-layout>
 
     <x-slot name="title">
-        Add Groups
+        Add Contact
     </x-slot>
     <div class="container mt-5">
         <div class="row">
@@ -24,10 +24,10 @@
                                 @error('name') <span class="text-danger">{{ $message }}</span>@enderror
                             </div>
                             <div class="mb-3">
-                                🔖<label>Description</label>
-                                <textarea name="description" class="form-control"
-                                    rows="3">{{ old('description') }}</textarea>
-                                @error('description') <span class="text-danger">{{ $message }}</span>@enderror
+                                🔖<label>Occupation</label>
+                                <textarea name="occupation" class="form-control"
+                                    rows="3">{{ old('occupation') }}</textarea>
+                                @error('occupation') <span class="text-danger">{{ $message }}</span>@enderror
                             </div>
 
                             <div class="mb-3">

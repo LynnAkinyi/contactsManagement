@@ -20,24 +20,32 @@ class GroupController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255|string',
-            'description' => 'required|max:255|string',
+            'occupation' => 'required|max:255|string',
             'is_active' => 'sometimes'
         ]);
 
         Group::create([
             'name' => $request->name,
-            'description' => $request->description,
+            'occupation' => $request->occupation,
             'is_active' => $request->is_active == true ? 1 : 0,
         ]);
 
-        return redirect('groups/create')->with('status', 'Group Created');
+        return redirect('groups/create')->with('status', 'Contact Created');
     }
 
-    public function group(int $id)
+    public function group($id)
     {
+        // Find the group by ID
         $group = Group::findOrFail($id);
-        return view('group.group', compact('group'));
 
+        // Get the occupation from the group
+        $occupation = $group->occupation;
+
+        // Retrieve all users with the same occupation
+        $users = Group::where('occupation', $occupation)->get();
+
+        // Return the view with the users
+        return view('group.group', compact('users', 'occupation'));
     }
 
     public function edit(int $id)
@@ -50,17 +58,17 @@ class GroupController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255|string',
-            'description' => 'required|max:255|string',
+            'occupation' => 'required|max:255|string',
             'is_active' => 'sometimes'
         ]);
 
         Group::findOrFail($id)->update([
             'name' => $request->name,
-            'description' => $request->description,
+            'occupation' => $request->occupation,
             'is_active' => $request->is_active == true ? 1 : 0,
         ]);
 
-        return redirect()->back()->with('status', 'Group Updated');
+        return redirect()->back()->with('status', 'Contact Updated');
     }
 
     public function destroy(int $id)
@@ -68,7 +76,7 @@ class GroupController extends Controller
         $group = Group::findOrFail($id);
         $group->delete();
 
-        return redirect()->back()->with('status', 'Group Updated');
+        return redirect()->back()->with('status', 'Contact Updated');
 
     }
 }

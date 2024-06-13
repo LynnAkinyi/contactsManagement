@@ -27,10 +27,10 @@
                                 @error('name') <span class="text-danger">{{ $message }}</span>@enderror
                             </div>
                             <div class="mb-3">
-                                🔖<label>Description</label>
-                                <textarea name="description" class="form-control"
-                                    rows="3">{{ $group->description }}</textarea>
-                                @error('description') <span class="text-danger">{{ $message }}</span>@enderror
+                                🔖<label>Occupation</label>
+                                <textarea name="occupation" class="form-control"
+                                    rows="3">{{ $group->occupation }}</textarea>
+                                @error('occupation') <span class="text-danger">{{ $message }}</span>@enderror
                             </div>
 
                             <div class="mb-3">

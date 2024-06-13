@@ -12,8 +12,8 @@ class Group extends Model
     protected $fillable = [
 
         'name',
-        'description',
-        'is_active'
+        'occupation',
+        'is_active',
 
     ];
 }
