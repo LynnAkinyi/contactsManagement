@@ -15,7 +15,6 @@ class Group extends Model
         'occupation',
         'email',
         'phone_number',
-        'is_active',
 
     ];
 }

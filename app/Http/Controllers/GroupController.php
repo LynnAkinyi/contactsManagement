@@ -23,7 +23,6 @@ class GroupController extends Controller
             'occupation' => 'required|max:255|string',
             'email' => 'required|max:255|string',
             'phone_number' => 'required',
-            'is_active' => 'sometimes'
         ]);
 
         Group::create([
@@ -31,7 +30,6 @@ class GroupController extends Controller
             'occupation' => $request->occupation,
             'email' => $request->email,
             'phone_number' => $request->phone_number,
-            'is_active' => $request->is_active == true ? 1 : 0,
         ]);
 
         return redirect('groups/create')->with('status', 'Contact Created');
@@ -65,7 +63,6 @@ class GroupController extends Controller
             'occupation' => 'required|max:255|string',
             'email' => 'required|max:255|string',
             'phone_number' => 'required',
-            'is_active' => 'sometimes'
         ]);
 
         Group::findOrFail($id)->update([
@@ -73,7 +70,7 @@ class GroupController extends Controller
             'occupation' => $request->occupation,
             'email' => $request->email,
             'phone_number' => $request->phone_number,
-            'is_active' => $request->is_active == true ? 1 : 0,
+
         ]);
 
         return redirect()->back()->with('status', 'Contact Updated');

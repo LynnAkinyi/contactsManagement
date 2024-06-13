@@ -40,11 +40,7 @@
                                     value="{{ old('phone_number') }}">
                                 @error('phone_number') <span class="text-danger">{{ $message }}</span>@enderror
                             </div>
-                            <div class="mb-3">
-                                🔖<label>Is_Active</label>
-                                <input type="checkbox" name="is_active" {{ old('is_active') == true ? 'checked' : '' }}>
-                                @error('is_active') <span class="text-danger">{{ $message }}</span>@enderror
-                            </div>
+
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-success">Save</button>
                             </div>

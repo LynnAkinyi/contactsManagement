@@ -58,7 +58,6 @@
                 <th>Occupation</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -68,10 +67,8 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->occupation }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->phone_numbert }}</td>
-                    <td class="{{ $user->is_active ? 'status-active' : 'status-inactive' }}">
-                        {{ $user->is_active ? 'Activate' : 'In-Active' }}
-                    </td>
+                    <td>{{ $user->phone_number }}</td>
+
                 </tr>
             @endforeach
         </tbody>

@@ -1,15 +1,15 @@
 <x-app-web-layout>
 
     <x-slot name="title">
-        Groups
+        Contacts
     </x-slot>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Contacts</h4>
-                        <a href="{{ url('groups/create')}}" class="btn btn-primary btn-sm">Add Contacts</a>
+                        <h2 style="text-align: center; font-size: 1.5rem;">Contacts</h2>
+                        <a href="{{ url('groups/create')}}" class="btn btn-success btn-sm">Add Contact</a>
                     </div>
                     <div class="card-body">
 
@@ -22,7 +22,6 @@
                                     <th>Occupation</th>
                                     <th>Email</th>
                                     <th>Phone Number</th>
-                                    <th>Is_Active</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -33,38 +32,35 @@ $previousOccupation = null;
                                 @endphp
 
                                 @foreach ($groups->sortBy('occupation') as $item)
-                                    @if ($item->occupation !== $previousOccupation)
-                                                                <tr>
-                                                                    <td colspan="5" class="occupation-row">{{ $item->occupation }}</td>
-                                                                </tr>
-                                                                @php
-        $previousOccupation = $item->occupation;
-                                                                @endphp
-                                    @endif
+                                                            @if ($item->occupation !== $previousOccupation)
+                                                                                        <tr>
+                                                                                            <td colspan="5" class="occupation-row">
+                                                                                                <h3 style="font-size: 1rem; margin-bottom: 10px;">{{ $item->occupation }}</h3>
+                                                                                                <a href="{{ url('groups/' . $item->id . '/group') }}"
+                                                                                                    class="btn btn-primary btn-sm">View Group</a>
+                                                                                            </td>
 
-                                    <tr>
-                                        <td>{{ $item->id }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->occupation }}</td>
-                                        <td>{{ $item->email }}</td>
-                                        <td>{{ $item->phone_number }}</td>
-                                        <td>
-                                            @if ($item->is_active)
-                                                Activate
-                                            @else
-                                                In-Active
-                                            @endif
-                                        </td>
-                                        <td>
-                                            <a href="{{ url('groups/' . $item->id . '/group') }}"
-                                                class="btn btn-success btn-sm">View Group</a>
-                                            <a href="{{ url('groups/' . $item->id . '/edit') }}"
-                                                class="btn btn-secondary btn-sm">Edit</a>
-                                            <a href="{{ url('groups/' . $item->id . '/delete') }}"
-                                                class="btn btn-danger btn-sm"
-                                                onclick="return confirm('Are you sure')">Delete</a>
-                                        </td>
-                                    </tr>
+                                                                                        </tr>
+                                                                                        @php
+        $previousOccupation = $item->occupation;
+                                                                                        @endphp
+                                                            @endif
+
+                                                            <tr>
+                                                                <td>{{ $item->id }}</td>
+                                                                <td>{{ $item->name }}</td>
+                                                                <td>{{ $item->occupation }}</td>
+                                                                <td>{{ $item->email }}</td>
+                                                                <td>{{ $item->phone_number }}</td>
+
+                                                                <td>
+                                                                    <a href="{{ url('groups/' . $item->id . '/edit') }}"
+                                                                        class="btn btn-secondary btn-sm">Edit</a>
+                                                                    <a href="{{ url('groups/' . $item->id . '/delete') }}"
+                                                                        class="btn btn-danger btn-sm"
+                                                                        onclick="return confirm('Are you sure')">Delete</a>
+                                                                </td>
+                                                            </tr>
                                 @endforeach
                             </tbody>
 
