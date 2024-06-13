@@ -21,12 +21,16 @@ class GroupController extends Controller
         $request->validate([
             'name' => 'required|max:255|string',
             'occupation' => 'required|max:255|string',
+            'email' => 'required|max:255|string',
+            'phone_number' => 'required',
             'is_active' => 'sometimes'
         ]);
 
         Group::create([
             'name' => $request->name,
             'occupation' => $request->occupation,
+            'email' => $request->email,
+            'phone_number' => $request->phone_number,
             'is_active' => $request->is_active == true ? 1 : 0,
         ]);
 
@@ -59,12 +63,16 @@ class GroupController extends Controller
         $request->validate([
             'name' => 'required|max:255|string',
             'occupation' => 'required|max:255|string',
+            'email' => 'required|max:255|string',
+            'phone_number' => 'required',
             'is_active' => 'sometimes'
         ]);
 
         Group::findOrFail($id)->update([
             'name' => $request->name,
             'occupation' => $request->occupation,
+            'email' => $request->email,
+            'phone_number' => $request->phone_number,
             'is_active' => $request->is_active == true ? 1 : 0,
         ]);
 

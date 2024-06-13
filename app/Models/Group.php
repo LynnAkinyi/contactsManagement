@@ -13,6 +13,8 @@ class Group extends Model
 
         'name',
         'occupation',
+        'email',
+        'phone_number',
         'is_active',
 
     ];

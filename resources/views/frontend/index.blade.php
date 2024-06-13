@@ -5,9 +5,11 @@
         </x-slot>
         <div class="py-5">
             <div class="container">
-                <h2>This is a contacts management app</h2>
                 <div class="mb-3">
                     <a href="{{url('groups') }}" class="btn btn-primary btn-sm">View Contacts</a>
+                    <img src="{{ asset('images/contact.png') }}" alt="Description of Image"
+                        style="max-width: 30%; height: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;">
+
                 </div>
             </div>
         </div>

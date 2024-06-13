@@ -32,7 +32,17 @@
                                     rows="3">{{ $group->occupation }}</textarea>
                                 @error('occupation') <span class="text-danger">{{ $message }}</span>@enderror
                             </div>
-
+                            <div class="mb-3">
+                                🔖<label>Email</label>
+                                <input type="text" name="email" class="form-control" value="{{ $group->email}}">
+                                @error('email') <span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="mb-3">
+                                🔖<label>Phone Number</label>
+                                <input type="text" name="phone_number" class="form-control"
+                                    value="{{ $group->phone_number }}">
+                                @error('phone_number') <span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
                             <div class="mb-3">
                                 🔖<label>Is_Active</label>
                                 <input type="checkbox" name="is_active" {{ $group->is_active == true ? 'checked' : '' }}>

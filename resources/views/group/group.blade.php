@@ -5,6 +5,11 @@
     <title>Users with the Same Occupation</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
     <style>
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -44,13 +49,15 @@
 </head>
 
 <body>
-    <h1>Users with the Occupation: {{ $occupation }}</h1>
+    <h2>{{ $occupation }}</h2>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Occupation</th>
+                <th>Email</th>
+                <th>Phone Number</th>
                 <th>Status</th>
             </tr>
         </thead>
@@ -60,6 +67,8 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->occupation }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->phone_numbert }}</td>
                     <td class="{{ $user->is_active ? 'status-active' : 'status-inactive' }}">
                         {{ $user->is_active ? 'Activate' : 'In-Active' }}
                     </td>
