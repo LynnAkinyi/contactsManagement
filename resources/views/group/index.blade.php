@@ -1,15 +1,15 @@
 <x-app-web-layout>
 
     <x-slot name="title">
-        Groups
+        Contacts
     </x-slot>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Groups</h4>
-                        <a href="{{ url('groups/create')}}" class="btn btn-primary btn-sm">Add Group</a>
+                        <h4>Contacts</h4>
+                        <a href="{{ url('groups/create')}}" class="btn btn-primary btn-sm">Add Contact</a>
                     </div>
                     <div class="card-body">
 
@@ -39,6 +39,8 @@
                                             @endif
                                         </td>
                                         <td>
+                                            <a href="{{url('groups/' . $item->id . '/group') }}"
+                                                class="btn btn-success btn-sm">Group</a>
                                             <a href="{{url('groups/' . $item->id . '/edit') }}"
                                                 class="btn btn-primary btn-sm">Edit</a>
                                             <a href="{{url('groups/' . $item->id . '/delete') }}"
